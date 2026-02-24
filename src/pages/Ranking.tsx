@@ -42,10 +42,18 @@ const Ranking = () => {
 
   // Function to determine rank style based on position
   const getRankStyle = (index: number) => {
-    if (index === 0) return "text-yellow-500 font-bold text-shadow-lg"; // Gold for 1st
-    if (index === 1) return "text-gray-400 font-bold text-shadow-lg"; // Silver for 2nd
-    if (index === 2) return "text-amber-700 font-bold text-shadow-lg"; // Bronze for 3rd
-    return "text-gray-300 font-semibold"; // Others
+    if (index === 0) return "text-yellow-400 font-black text-shadow-lg drop-shadow-lg"; // Gold for 1st
+    if (index === 1) return "text-gray-300 font-black text-shadow-lg drop-shadow-lg"; // Silver for 2nd
+    if (index === 2) return "text-orange-600 font-black text-shadow-lg drop-shadow-lg"; // Bronze for 3rd
+    return "text-gray-400 font-semibold"; // Others
+  };
+
+  // Function to get medal emoji
+  const getMedalEmoji = (index: number) => {
+    if (index === 0) return "🥇";
+    if (index === 1) return "🥈";
+    if (index === 2) return "🥉";
+    return null;
   };
 
   // Split players into two groups
@@ -78,8 +86,8 @@ const Ranking = () => {
             const globalIndex = startIndex + index;
             return (
               <TableRow key={player.id} className={globalIndex < 3 ? "bg-gradient-to-r from-yellow-50 to-red-50" : "bg-white hover:bg-gray-50"}>
-                <TableCell className={`text-center font-bold text-3xl py-3 ${getRankStyle(globalIndex)}`}>
-                  {globalIndex + 1}
+                <TableCell className={`text-center font-black text-4xl py-3 ${getRankStyle(globalIndex)}`}>
+                  {getMedalEmoji(globalIndex)} {globalIndex + 1}
                 </TableCell>
                 <TableCell className="font-bold text-2xl py-3 text-gray-800">
                   {player.name}

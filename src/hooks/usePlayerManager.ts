@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Player } from '../models/Player';
 import { toast } from '@/components/ui/sonner';
 
@@ -102,9 +102,9 @@ export const usePlayerManager = () => {
   };
 
   // Obtener jugadores ordenados por puntuación
-  const getRankedPlayers = () => {
+  const getRankedPlayers = useCallback(() => {
     return [...players].sort((a, b) => b.score - a.score);
-  };
+  }, [players]);
 
   return {
     players,
