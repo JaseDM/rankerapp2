@@ -120,19 +120,11 @@ const Ranking = () => {
       <div className="px-[4%] py-12 h-screen flex flex-col">
         {/* Cabecera */}
         <div className="flex items-center justify-center mb-8">
-          <img 
-            src="/lovable-uploads/5a594226-3461-40ca-9838-e0a75ef90f3e.png" 
-            alt="McDonald's Logo" 
-            className="w-10 object-contain"
-          />
+          
           <h1 className="px-10 text-4xl md:text-5xl font-bold text-center text-yellow-400 drop-shadow-2xl">
             Ranking de Jugadores 
           </h1>
-          <img 
-            src="/lovable-uploads/5a594226-3461-40ca-9838-e0a75ef90f3e.png" 
-            alt="McDonald's Logo" 
-            className="w-10 object-contain"
-          />
+          
         </div>
       
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 flex-1 w-full">
